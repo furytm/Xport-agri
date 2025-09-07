@@ -1,0 +1,35 @@
+import { Leaf } from "lucide-react"
+import Link from "next/link"
+
+export default function Navbar() {
+  return (
+    <nav className="bg-agri-green text-white px-4 py-4 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+          <Leaf className="h-8 w-8" />
+          <span className="text-xl font-bold">AgriExport Global</span>
+        </Link>
+        <div className="hidden md:flex items-center space-x-8 text-sm">
+          <Link href="/about" className="hover:text-agri-orange transition-colors">
+            About
+          </Link>
+          <Link href="/products" className="hover:text-agri-orange transition-colors">
+            Products
+          </Link>
+          <Link href="/process" className="hover:text-agri-orange transition-colors">
+            Process
+          </Link>
+          <Link href="/sustainability" className="hover:text-agri-orange transition-colors">
+            Sustainability
+          </Link>
+          <Link href="/certifications" className="hover:text-agri-orange transition-colors">
+            Certifications
+          </Link>
+          <Link href="/contact" className="hover:text-agri-orange transition-colors">
+            Contact
+          </Link>
+        </div>
+      </div>
+    </nav>
+  )
+}
