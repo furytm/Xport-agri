@@ -14,7 +14,9 @@ export default function AboutPage() {
       <section
         className="py-20 bg-cover bg-center bg-no-repeat relative"
         style={{
-          backgroundImage: "url('/african-agricultural-landscape-cocoa-farms-sunrise.jpg')",
+          backgroundImage: "url('/cocoa-farm-plantation-workers-harvesting-african-a.jpg')",
+        
+        
         }}
       >
         <div className="absolute inset-0 bg-agri-green/30"></div>
