@@ -44,11 +44,11 @@ export default function AgriExportLanding() {
           <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-8 text-pretty">
             GlobalBridge Export Ltd is a proudly African company dedicated to connecting the world with the finest agro products from the continent. We specialize in sourcing, packaging, and exporting high-quality African agricultural products to international markets.
           </p>
-          <Button
+          <Button asChild
             variant="outline"
             className="border-agri-green text-agri-green hover:bg-agri-green hover:text-white bg-transparent"
-          >
-            Learn More About Us
+          ><Link  href="/about">   Learn More About Us</Link>
+         
           </Button>
         </div>
       </section>
@@ -75,7 +75,7 @@ export default function AgriExportLanding() {
                   <Badge variant="secondary">Organic Certified</Badge>
                   <Badge variant="secondary">Fair Trade</Badge>
                 </div>
-                <Button className="w-full bg-agri-orange hover:bg-orange-600 text-white">View Details</Button>
+                <Button asChild className="w-full bg-agri-orange hover:bg-orange-600 text-white"><Link href="/products">View Details</Link></Button>
               </CardContent>
             </Card>
 
@@ -97,7 +97,7 @@ export default function AgriExportLanding() {
                   <Badge variant="secondary">Grade A</Badge>
                   <Badge variant="secondary">Export Quality</Badge>
                 </div>
-                <Button className="w-full bg-agri-orange hover:bg-orange-600 text-white">View Details</Button>
+                <Button  className="w-full bg-agri-orange hover:bg-orange-600 text-white">View Details</Button>
               </CardContent>
             </Card>
 
@@ -119,7 +119,7 @@ export default function AgriExportLanding() {
                   <Badge variant="secondary">Diverse Range</Badge>
                   <Badge variant="secondary">Quality Assured</Badge>
                 </div>
-                <Button className="w-full bg-agri-orange hover:bg-orange-600 text-white">View Details</Button>
+                <Button  className="w-full bg-agri-orange hover:bg-orange-600 text-white"> <Link href="/products">View Details</Link></Button>
               </CardContent>
             </Card>
           </div>
