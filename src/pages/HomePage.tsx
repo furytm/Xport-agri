@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Leaf, Shield, Truck, Award, Globe, Users } from "lucide-react"
+import { Leaf, Shield, Truck, Award, Globe, Users, Link } from "lucide-react"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 
@@ -26,9 +26,15 @@ const HomePage = () => {
           <p className="text-xl md:text-2xl mb-8 text-balance drop-shadow-md">
             Certified quality. Seamless delivery. Connecting global markets with Africa's finest agricultural products.
           </p>
-          <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 text-lg">
-            Start Export Inquiry →
-          </Button>
+           <Link href="/ContactPage">
+      <Button
+        size="lg"
+        className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 text-lg"
+      >
+        Start Export Inquiry →
+      </Button>
+    </Link>
+          
         </div>
       </section>
 
@@ -303,7 +309,7 @@ const HomePage = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">Phone</h4>
-                    <p className="text-gray-700">+233 XX XXX XXXX</p>
+                    <p className="text-gray-700">+2349034397834</p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">Office</h4>

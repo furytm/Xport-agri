@@ -184,9 +184,12 @@ export default function ProductsPage() {
       </section>
 
       {/* Processing Methods */}
-      <section className="py-16">
+      <section className="relative bg-fixed bg-center bg-cover bg-no-repeat py-16 px-4"
+  style={{
+    backgroundImage: "url('/cocoa3.webp')", 
+  }}>
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-agri-green mb-12 text-center">Our Processing Standards</h2>
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Our Processing Standards</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="text-center">
               <CardHeader>

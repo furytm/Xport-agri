@@ -16,7 +16,6 @@ export default function AboutPage() {
         style={{
           backgroundImage: "url('/cocoa-farm-plantation-workers-harvesting-african-a.jpg')",
         
-        
         }}
       >
         <div className="absolute inset-0 bg-agri-green/30"></div>
@@ -35,10 +34,8 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-bold text-agri-green mb-6">Who We Are</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              AgriExport Global is a leading agricultural export company specializing in premium cocoa, cashew nuts, and
-              other high-quality African agricultural products. Founded with a vision to bridge the gap between African
-              farmers and global markets, we have built a reputation for excellence, reliability, and sustainable
-              business practices.
+           Our mission is to showcase the richness of Africa’s farmlands by delivering fresh, natural, and premium-grade products that meet global standards. With a strong commitment to quality, reliability, and sustainability, we ensure that our clients receive only the best Africa has to offer.
+At GlobalBridge Export Ltd, we are not just building trade links — we are bridging cultures and fostering lasting partnerships across the globe.
             </p>
           </div>
         </div>
@@ -135,9 +132,12 @@ export default function AboutPage() {
       </section>
 
       {/* Team & Leadership */}
-      <section className="py-16 bg-white">
+      <section className="relative bg-fixed bg-center bg-cover bg-no-repeat py-16 px-4"
+  style={{
+    backgroundImage: "url('/cocoa2.webp')", 
+  }}>
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-agri-green mb-12 text-center">Our Leadership Team</h2>
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Our Leadership Team</h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <Card>
               <CardHeader className="text-center">

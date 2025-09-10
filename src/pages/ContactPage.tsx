@@ -13,8 +13,12 @@ export default function ContactPage() {
       <Navbar />
 
       {/* Hero Section */}
-      
-      <section className="py-20 bg-gradient-to-r from-agri-green to-green-800">
+
+      <section className="relative py-20 bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: "url('/cocoa.webp')",
+
+      }}>
+      <div className="absolute inset-0 bg-agri-green/30 z-0"></div>
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Contact Us</h1>
           <p className="text-xl text-green-100 max-w-3xl mx-auto">

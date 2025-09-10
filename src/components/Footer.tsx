@@ -6,9 +6,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <Leaf className="h-6 w-6" />
-              <span className="text-lg font-bold">AgriExport Global</span>
+            <div className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+        <img
+								src="/log.jpg"
+								alt="logo"
+								className="h-12 "
+							/>
+              <span className="text-lg font-bold">GlobalBridge Export</span>
             </div>
             <p className="text-gray-300 text-sm">
               Connecting global markets with Africa's finest agricultural products through sustainable and ethical trade
@@ -81,7 +85,7 @@ export default function Footer() {
 
         <div className="border-t border-green-600 mt-8 pt-8 text-center">
           <p className="text-gray-300 text-sm">
-            © 2024 AgriExport Global. All rights reserved. | Privacy Policy | Terms of Service
+            © 2024 GlobalBridge Export. All rights reserved. | Privacy Policy | Terms of Service
           </p>
         </div>
       </div>

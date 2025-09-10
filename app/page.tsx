@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -9,7 +10,8 @@ import Footer from "@/src/components/Footer"
 
 export default function AgriExportLanding() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white"
+    >
       <Navbar />
 
       <section id="home" className="relative bg-gradient-to-r from-green-900 to-green-700 text-white py-20 px-4">
@@ -21,25 +23,26 @@ export default function AgriExportLanding() {
         />
         <div className="relative max-w-7xl mx-auto text-center z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance text-white drop-shadow-lg">
+
             Exporting Premium Cocoa & Cashew Worldwide
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white max-w-3xl mx-auto text-pretty drop-shadow-md">
             Certified quality. Seamless delivery. Connecting global markets with Africa's finest agricultural products.
           </p>
-          <Button size="lg" className="bg-agri-orange hover:bg-orange-600 text-white text-lg px-8 py-3">
-            Start Export Inquiry
-            <ArrowRight className="ml-2 h-5 w-5" />
+          <Button asChild size="lg" className="bg-agri-orange hover:bg-orange-600 text-white text-lg px-8 py-3">
+            <Link href="/contact">
+              Start Export Inquiry
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
         </div>
       </section>
 
       <section id="about" className="bg-agri-cream py-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-agri-green mb-6">About AgriExport Global</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-agri-green mb-6">About  GlobalBridge Export</h2>
           <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-8 text-pretty">
-            With over 15 years of experience in agricultural exports, we bridge the gap between African farmers and
-            global markets. Our commitment to quality, sustainability, and fair trade practices has made us a trusted
-            partner for importers worldwide.
+            GlobalBridge Export Ltd is a proudly African company dedicated to connecting the world with the finest agro products from the continent. We specialize in sourcing, packaging, and exporting high-quality African agricultural products to international markets.
           </p>
           <Button
             variant="outline"
@@ -123,54 +126,59 @@ export default function AgriExportLanding() {
         </div>
       </section>
 
-      <section id="process" className="bg-gray-50 py-16 px-4">
+      <section id="process" className="relative bg-fixed bg-center bg-cover bg-no-repeat py-16 px-4"
+        style={{
+          backgroundImage: "url('/cocoaseeds.webp')",
+        }}>
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-agri-green text-center mb-12">Our Export Process</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Our Export Process</h2>
           <div className="grid md:grid-cols-5 gap-8">
             <div className="text-center">
               <div className="bg-agri-green text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl">
                 🌱
               </div>
-              <h3 className="font-semibold text-agri-green mb-2">Sourcing</h3>
-              <p className="text-sm text-gray-600">Direct partnerships with certified farmers and cooperatives</p>
+              <h3 className="font-semibold text-white mb-2">Sourcing</h3>
+              <p className="text-sm text-white">Direct partnerships with certified farmers and cooperatives</p>
             </div>
 
             <div className="text-center">
               <div className="bg-agri-orange text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl">
                 🤝
               </div>
-              <h3 className="font-semibold text-agri-green mb-2">Agreement</h3>
-              <p className="text-sm text-gray-600">Transparent contracts with clear terms and pricing</p>
+              <h3 className="font-semibold text-white mb-2">Agreement</h3>
+              <p className="text-sm text-white">Transparent contracts with clear terms and pricing</p>
             </div>
 
             <div className="text-center">
               <div className="bg-agri-green text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl">
                 📄
               </div>
-              <h3 className="font-semibold text-agri-green mb-2">Documentation</h3>
-              <p className="text-sm text-gray-600">Complete export documentation and certifications</p>
+              <h3 className="font-semibold text-white mb-2">Documentation</h3>
+              <p className="text-sm text-white">Complete export documentation and certifications</p>
             </div>
 
             <div className="text-center">
               <div className="bg-agri-orange text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl">
                 🚢
               </div>
-              <h3 className="font-semibold text-agri-green mb-2">Shipping</h3>
-              <p className="text-sm text-gray-600">Secure packaging and reliable global logistics</p>
+              <h3 className="font-semibold text-white mb-2">Shipping</h3>
+              <p className="text-sm text-white">Secure packaging and reliable global logistics</p>
             </div>
 
             <div className="text-center">
               <div className="bg-agri-green text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl">
                 💳
               </div>
-              <h3 className="font-semibold text-agri-green mb-2">Payment</h3>
-              <p className="text-sm text-gray-600">Flexible payment terms and secure transactions</p>
+              <h3 className="font-semibold text-white mb-2">Payment</h3>
+              <p className="text-sm text-white">Flexible payment terms and secure transactions</p>
             </div>
           </div>
 
           <div className="text-center mt-12">
-            <Button size="lg" className="bg-agri-orange hover:bg-orange-600 text-white">
+            <Button asChild size="lg" className="bg-agri-orange hover:bg-orange-600 text-white">
+              <Link href="/contact"> 
               Start Export Inquiry
+              </Link>
             </Button>
           </div>
         </div>
@@ -179,7 +187,7 @@ export default function AgriExportLanding() {
       <section className="bg-agri-cream py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-agri-green text-center mb-12">
-            Why Choose AgriExport Global
+            Why Choose GlobalBridge Export
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
@@ -237,26 +245,26 @@ export default function AgriExportLanding() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-agri-orange" />
-                  <span>+233 (0) 123 456 789</span>
+                  <span>+234 903 439 7834</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-agri-orange" />
-                  <span>info@agriexportglobal.com</span>
+                  <span>info@globalbridge.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MessageCircle className="h-5 w-5 text-agri-orange" />
-                  <span>WhatsApp: +233 (0) 123 456 789</span>
+                  <span>WhatsApp: +234 903 439 7834</span>
                 </div>
               </div>
 
               <div className="mt-8">
                 <h4 className="font-semibold mb-2">Office Address</h4>
                 <p className="text-gray-200">
-                  123 Export Drive
+                  25 Okezie Ugbaja Street
                   <br />
-                  Accra, Ghana
+                  Victory Estate Off Ago
                   <br />
-                  West Africa
+                  Lagos, Nigeria
                 </p>
               </div>
             </div>
