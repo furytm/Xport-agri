@@ -1,3 +1,12 @@
+"use client";
+import { motion } from "framer-motion";
+import {
+  fadeInUp,
+  fadeInLeft,
+  fadeInRight,
+  staggerContainer,
+  motionProps,
+} from "../animations/animations";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -10,171 +19,249 @@ export default function CertificationsPage() {
     <div className="min-h-screen bg-agri-cream">
       <Navbar />
 
-      {/* Hero Section */}
+    {/* Hero Section */}
       <section
         className="py-20 bg-cover bg-center bg-no-repeat relative"
         style={{
-          backgroundImage: "url('/company-founders-in-agricultural-field-during-sunr.jpg')",
+          backgroundImage:
+            "url('/company-founders-in-agricultural-field-during-sunr.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-agri-green/30"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Certifications & Partners</h1>
-          <p className="text-xl text-green-100 max-w-3xl mx-auto">
-            Our commitment to quality and sustainability is validated through internationally recognized certifications
-            and partnerships with leading organizations worldwide.
-          </p>
+          <motion.h1
+            variants={fadeInUp}
+            {...motionProps}
+            className="text-4xl md:text-6xl font-bold text-white mb-6"
+          >
+            Certifications & Partners
+          </motion.h1>
+          <motion.p
+            variants={fadeInUp}
+            {...motionProps}
+            className="text-xl text-green-100 max-w-3xl mx-auto"
+          >
+            Our commitment to quality and sustainability is validated through
+            internationally recognized certifications and partnerships with
+            leading organizations worldwide.
+          </motion.p>
         </div>
       </section>
 
       {/* Certifications Overview */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-bold text-agri-green mb-6">Quality Assurance Through Certification</h2>
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="container mx-auto px-4"
+        >
+          <motion.div
+            variants={fadeInUp}
+            {...motionProps}
+            className="max-w-4xl mx-auto text-center mb-16"
+          >
+            <h2 className="text-3xl font-bold text-agri-green mb-6">
+              Quality Assurance Through Certification
+            </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              We maintain the highest standards through rigorous certification processes that validate our commitment to
-              quality, sustainability, and ethical business practices. Each certification represents our dedication to
-              excellence and continuous improvement.
+              We maintain the highest standards through rigorous certification
+              processes that validate our commitment to quality, sustainability,
+              and ethical business practices. Each certification represents our
+              dedication to excellence and continuous improvement.
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Main Certifications */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-agri-green mb-12 text-center">Our Certifications</h2>
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="container mx-auto px-4"
+        >
+          <h2 className="text-3xl font-bold text-agri-green mb-12 text-center">
+            Our Certifications
+          </h2>
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Fairtrade */}
-            <Card className="border-agri-green border-2">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-agri-green rounded-full flex items-center justify-center">
-                    <Users className="h-8 w-8 text-white" />
+            <motion.div variants={fadeInLeft} {...motionProps}>
+              <Card className="border-agri-green border-2">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 bg-agri-green rounded-full flex items-center justify-center">
+                      <Users className="h-8 w-8 text-white" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-2xl text-agri-green">
+                        Fairtrade Certified
+                      </CardTitle>
+                      <CardDescription>
+                        Ethical trade and farmer empowerment
+                      </CardDescription>
+                    </div>
                   </div>
-                  <div>
-                    <CardTitle className="text-2xl text-agri-green">Fairtrade Certified</CardTitle>
-                    <CardDescription>Ethical trade and farmer empowerment</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-700">
+                    Our Fairtrade certification ensures that farmers receive
+                    fair prices, work in safe conditions, and invest in
+                    sustainable practices and community development.
+                  </p>
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-agri-green">
+                      What This Means:
+                    </h4>
+                    <ul className="space-y-1 text-sm text-gray-600">
+                      <li>• Fair minimum prices for farmers</li>
+                      <li>• Premium payments for community projects</li>
+                      <li>• Safe working conditions and labor rights</li>
+                      <li>• Environmental protection standards</li>
+                      <li>• Democratic organization of farmers</li>
+                    </ul>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-700">
-                  Our Fairtrade certification ensures that farmers receive fair prices for their products, work in safe
-                  conditions, and invest in sustainable farming practices and community development.
-                </p>
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-agri-green">What This Means:</h4>
-                  <ul className="space-y-1 text-sm text-gray-600">
-                    <li>• Fair minimum prices for farmers</li>
-                    <li>• Premium payments for community projects</li>
-                    <li>• Safe working conditions and labor rights</li>
-                    <li>• Environmental protection standards</li>
-                    <li>• Democratic organization of farmers</li>
-                  </ul>
-                </div>
-                <Badge className="bg-agri-orange text-white">Certified Since 2015</Badge>
-              </CardContent>
-            </Card>
+                  <Badge className="bg-agri-orange text-white">
+                    Certified Since 2015
+                  </Badge>
+                </CardContent>
+              </Card>
+            </motion.div>
 
             {/* Organic */}
-            <Card className="border-agri-green border-2">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-agri-green rounded-full flex items-center justify-center">
-                    <Award className="h-8 w-8 text-white" />
+            <motion.div variants={fadeInRight} {...motionProps}>
+              <Card className="border-agri-green border-2">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 bg-agri-green rounded-full flex items-center justify-center">
+                      <Award className="h-8 w-8 text-white" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-2xl text-agri-green">
+                        Organic Certified
+                      </CardTitle>
+                      <CardDescription>
+                        Chemical-free, natural production
+                      </CardDescription>
+                    </div>
                   </div>
-                  <div>
-                    <CardTitle className="text-2xl text-agri-green">Organic Certified</CardTitle>
-                    <CardDescription>Chemical-free, natural production</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-700">
+                    Our organic certification guarantees that our products are
+                    grown without synthetic pesticides, herbicides, or
+                    fertilizers, using methods that preserve soil health and
+                    biodiversity.
+                  </p>
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-agri-green">
+                      What This Means:
+                    </h4>
+                    <ul className="space-y-1 text-sm text-gray-600">
+                      <li>• No synthetic chemicals or GMOs</li>
+                      <li>• Soil health and fertility maintenance</li>
+                      <li>• Biodiversity conservation</li>
+                      <li>• Natural pest and disease management</li>
+                      <li>• Regular third-party inspections</li>
+                    </ul>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-700">
-                  Our organic certification guarantees that our products are grown without synthetic pesticides,
-                  herbicides, or fertilizers, using methods that preserve soil health and biodiversity.
-                </p>
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-agri-green">What This Means:</h4>
-                  <ul className="space-y-1 text-sm text-gray-600">
-                    <li>• No synthetic chemicals or GMOs</li>
-                    <li>• Soil health and fertility maintenance</li>
-                    <li>• Biodiversity conservation</li>
-                    <li>• Natural pest and disease management</li>
-                    <li>• Regular third-party inspections</li>
-                  </ul>
-                </div>
-                <Badge className="bg-agri-orange text-white">EU & USDA Organic</Badge>
-              </CardContent>
-            </Card>
+                  <Badge className="bg-agri-orange text-white">
+                    EU & USDA Organic
+                  </Badge>
+                </CardContent>
+              </Card>
+            </motion.div>
 
             {/* ISO 22000 */}
-            <Card className="border-agri-green border-2">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-agri-green rounded-full flex items-center justify-center">
-                    <Shield className="h-8 w-8 text-white" />
+            <motion.div variants={fadeInLeft} {...motionProps}>
+              <Card className="border-agri-green border-2">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 bg-agri-green rounded-full flex items-center justify-center">
+                      <Shield className="h-8 w-8 text-white" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-2xl text-agri-green">
+                        ISO 22000
+                      </CardTitle>
+                      <CardDescription>
+                        Food safety management system
+                      </CardDescription>
+                    </div>
                   </div>
-                  <div>
-                    <CardTitle className="text-2xl text-agri-green">ISO 22000</CardTitle>
-                    <CardDescription>Food safety management system</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-700">
+                    ISO 22000 certification demonstrates our commitment to food
+                    safety through systematic management of hazards and
+                    continuous improvement.
+                  </p>
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-agri-green">
+                      What This Means:
+                    </h4>
+                    <ul className="space-y-1 text-sm text-gray-600">
+                      <li>• Comprehensive food safety management</li>
+                      <li>• Hazard analysis and critical control points</li>
+                      <li>• Traceability throughout the supply chain</li>
+                      <li>• Regular monitoring and verification</li>
+                      <li>• Continuous improvement processes</li>
+                    </ul>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-700">
-                  ISO 22000 certification demonstrates our commitment to food safety through systematic management of
-                  food safety hazards and continuous improvement of our processes.
-                </p>
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-agri-green">What This Means:</h4>
-                  <ul className="space-y-1 text-sm text-gray-600">
-                    <li>• Comprehensive food safety management</li>
-                    <li>• Hazard analysis and critical control points</li>
-                    <li>• Traceability throughout the supply chain</li>
-                    <li>• Regular monitoring and verification</li>
-                    <li>• Continuous improvement processes</li>
-                  </ul>
-                </div>
-                <Badge className="bg-agri-orange text-white">Annually Audited</Badge>
-              </CardContent>
-            </Card>
+                  <Badge className="bg-agri-orange text-white">
+                    Annually Audited
+                  </Badge>
+                </CardContent>
+              </Card>
+            </motion.div>
 
             {/* HACCP */}
-            <Card className="border-agri-green border-2">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-agri-green rounded-full flex items-center justify-center">
-                    <CheckCircle className="h-8 w-8 text-white" />
+            <motion.div variants={fadeInRight} {...motionProps}>
+              <Card className="border-agri-green border-2">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 bg-agri-green rounded-full flex items-center justify-center">
+                      <CheckCircle className="h-8 w-8 text-white" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-2xl text-agri-green">
+                        HACCP Compliant
+                      </CardTitle>
+                      <CardDescription>
+                        Hazard analysis and critical control
+                      </CardDescription>
+                    </div>
                   </div>
-                  <div>
-                    <CardTitle className="text-2xl text-agri-green">HACCP Compliant</CardTitle>
-                    <CardDescription>Hazard analysis and critical control</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-700">
+                    HACCP compliance ensures that we identify, evaluate, and
+                    control hazards at every stage of production,
+                    processing, and distribution.
+                  </p>
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-agri-green">
+                      What This Means:
+                    </h4>
+                    <ul className="space-y-1 text-sm text-gray-600">
+                      <li>• Systematic hazard identification</li>
+                      <li>• Critical control point monitoring</li>
+                      <li>• Preventive approach to food safety</li>
+                      <li>• Documentation and record keeping</li>
+                      <li>• Staff training and awareness</li>
+                    </ul>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-700">
-                  HACCP compliance ensures that we identify, evaluate, and control food safety hazards at every stage of
-                  production, processing, and distribution.
-                </p>
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-agri-green">What This Means:</h4>
-                  <ul className="space-y-1 text-sm text-gray-600">
-                    <li>• Systematic hazard identification</li>
-                    <li>• Critical control point monitoring</li>
-                    <li>• Preventive approach to food safety</li>
-                    <li>• Documentation and record keeping</li>
-                    <li>• Staff training and awareness</li>
-                  </ul>
-                </div>
-                <Badge className="bg-agri-orange text-white">Fully Implemented</Badge>
-              </CardContent>
-            </Card>
+                  <Badge className="bg-agri-orange text-white">
+                    Fully Implemented
+                  </Badge>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Additional Certifications */}

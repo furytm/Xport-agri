@@ -1,9 +1,24 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Download, Package, Truck, Award } from "lucide-react"
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+"use client";
+import { motion } from "framer-motion";
+import {
+  fadeInUp,
+  fadeInLeft,
+  fadeInRight,
+  staggerContainer,
+  motionProps,
+} from "../animations/animations";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Download, Package, Truck, Award } from "lucide-react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function ProductsPage() {
   return (
@@ -15,33 +30,63 @@ export default function ProductsPage() {
         className="py-20 bg-cover bg-center bg-no-repeat relative"
         style={{
           backgroundImage: "url('/premium-cocoa-beans-in-burlap-sacks.jpg')",
-        
         }}
       >
         <div className="absolute inset-0 bg-agri-green/30"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Premium Export Products</h1>
-          <p className="text-xl text-green-100 max-w-3xl mx-auto">
-            Discover our carefully selected range of high-quality African agricultural products, sourced directly from
-            trusted farmers and processed to international standards.
-          </p>
+          <motion.h1
+            variants={fadeInUp}
+            {...motionProps}
+            custom={0.2}
+            className="text-4xl md:text-6xl font-bold text-white mb-6"
+          >
+            Premium Export Products
+          </motion.h1>
+          <motion.p
+            variants={fadeInUp}
+            {...motionProps}
+            custom={0.4}
+            className="text-xl text-green-100 max-w-3xl mx-auto"
+          >
+            Discover our carefully selected range of high-quality African
+            agricultural products, sourced directly from trusted farmers and
+            processed to international standards.
+          </motion.p>
         </div>
       </section>
 
       {/* Product Overview */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <motion.div
+          className="container mx-auto px-4"
+          variants={staggerContainer}
+          {...motionProps}
+        >
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-bold text-agri-green mb-6">Our Product Range</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              We specialize in exporting premium cocoa, cashew nuts, and other agricultural products from West Africa.
-              Each product undergoes rigorous quality control processes to ensure it meets international standards and
-              exceeds customer expectations.
-            </p>
+            <motion.h2
+              variants={fadeInUp}
+              custom={0.2}
+              className="text-3xl font-bold text-agri-green mb-6"
+            >
+              Our Product Range
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
+              custom={0.4}
+              className="text-lg text-gray-700 leading-relaxed"
+            >
+              We specialize in exporting premium cocoa, cashew nuts, and other
+              agricultural products from West Africa. Each product undergoes
+              rigorous quality control processes to ensure it meets
+              international standards and exceeds customer expectations.
+            </motion.p>
           </div>
-        </div>
+        </motion.div>
       </section>
 
+     
+  
+    
       {/* Product Categories */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -183,112 +228,184 @@ export default function ProductsPage() {
         </div>
       </section>
 
+
       {/* Processing Methods */}
-      <section className="relative bg-fixed bg-center bg-cover bg-no-repeat py-16 px-4"
-  style={{
-    backgroundImage: "url('/cocoa3.webp')", 
-  }}>
+      <section
+        className="relative bg-fixed bg-center bg-cover bg-no-repeat py-16 px-4"
+        style={{ backgroundImage: "url('/cocoa3.webp')" }}
+      >
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Our Processing Standards</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center">
-              <CardHeader>
-                <div className="w-16 h-16 bg-agri-green rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Package className="h-8 w-8 text-white" />
-                </div>
-                <CardTitle className="text-agri-green">Sorting & Grading</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  Manual and mechanical sorting to remove defective products and ensure uniform quality.
-                </p>
-              </CardContent>
-            </Card>
+          <motion.h2
+            variants={fadeInUp}
+            {...motionProps}
+            custom={0.1}
+            className="text-3xl font-bold text-white mb-12 text-center"
+          >
+            Our Processing Standards
+          </motion.h2>
 
-            <Card className="text-center">
-              <CardHeader>
-                <div className="w-16 h-16 bg-agri-green rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Award className="h-8 w-8 text-white" />
-                </div>
-                <CardTitle className="text-agri-green">Quality Testing</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  Laboratory testing for moisture, aflatoxin, and other quality parameters.
-                </p>
-              </CardContent>
-            </Card>
+          <motion.div
+            variants={staggerContainer}
+            {...motionProps}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            <motion.div variants={fadeInLeft} custom={0.2}>
+              <Card className="text-center">
+                <CardHeader>
+                  <div className="w-16 h-16 bg-agri-green rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <Package className="h-8 w-8 text-white" />
+                  </div>
+                  <CardTitle className="text-agri-green">
+                    Sorting & Grading
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 text-sm">
+                    Manual and mechanical sorting to remove defective products
+                    and ensure uniform quality.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
 
-            <Card className="text-center">
-              <CardHeader>
-                <div className="w-16 h-16 bg-agri-green rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Package className="h-8 w-8 text-white" />
-                </div>
-                <CardTitle className="text-agri-green">Packaging</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  Food-grade packaging materials and methods to preserve quality during transport.
-                </p>
-              </CardContent>
-            </Card>
+            <motion.div variants={fadeInRight} custom={0.3}>
+              <Card className="text-center">
+                <CardHeader>
+                  <div className="w-16 h-16 bg-agri-green rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <Award className="h-8 w-8 text-white" />
+                  </div>
+                  <CardTitle className="text-agri-green">
+                    Quality Testing
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 text-sm">
+                    Laboratory testing for moisture, aflatoxin, and other
+                    quality parameters.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
 
-            <Card className="text-center">
-              <CardHeader>
-                <div className="w-16 h-16 bg-agri-green rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Truck className="h-8 w-8 text-white" />
-                </div>
-                <CardTitle className="text-agri-green">Storage & Logistics</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  Climate-controlled storage and efficient logistics to maintain product integrity.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+            <motion.div variants={fadeInLeft} custom={0.4}>
+              <Card className="text-center">
+                <CardHeader>
+                  <div className="w-16 h-16 bg-agri-green rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <Package className="h-8 w-8 text-white" />
+                  </div>
+                  <CardTitle className="text-agri-green">Packaging</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 text-sm">
+                    Food-grade packaging materials and methods to preserve
+                    quality during transport.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div variants={fadeInRight} custom={0.5}>
+              <Card className="text-center">
+                <CardHeader>
+                  <div className="w-16 h-16 bg-agri-green rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <Truck className="h-8 w-8 text-white" />
+                  </div>
+                  <CardTitle className="text-agri-green">
+                    Storage & Logistics
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 text-sm">
+                    Climate-controlled storage and efficient logistics to
+                    maintain product integrity.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Download Catalog */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-agri-green mb-6">Product Catalog & Specifications</h2>
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Download our comprehensive product catalog with detailed specifications, pricing information, and export
-            terms for all our agricultural products.
-          </p>
-          <Button size="lg" className="bg-agri-orange hover:bg-orange-600 text-white">
-            <Download className="h-5 w-5 mr-2" />
-            Download Product Catalog
-          </Button>
+          <motion.h2
+            variants={fadeInUp}
+            {...motionProps}
+            custom={0.1}
+            className="text-3xl font-bold text-agri-green mb-6"
+          >
+            Product Catalog & Specifications
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            {...motionProps}
+            custom={0.2}
+            className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto"
+          >
+            Download our comprehensive product catalog with detailed
+            specifications, pricing information, and export terms for all our
+            agricultural products.
+          </motion.p>
+          <motion.div variants={fadeInUp} {...motionProps} custom={0.3}>
+            <Button
+              size="lg"
+              className="bg-agri-orange hover:bg-orange-600 text-white"
+            >
+              <Download className="h-5 w-5 mr-2" />
+              Download Product Catalog
+            </Button>
+          </motion.div>
         </div>
       </section>
 
       {/* Call to Action */}
       <section className="py-16 bg-agri-green">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Ready to Place an Order?</h2>
-          <p className="text-green-100 mb-8 max-w-2xl mx-auto">
-            Contact our export team to discuss your requirements, get pricing information, and start your order process
-            today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-agri-orange hover:bg-orange-600 text-white">
-              Start Export Inquiry
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-agri-green bg-transparent"
-            >
-              View Export Process
-            </Button>
-          </div>
+          <motion.h2
+            variants={fadeInUp}
+            {...motionProps}
+            custom={0.1}
+            className="text-3xl font-bold text-white mb-6"
+          >
+            Ready to Place an Order?
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            {...motionProps}
+            custom={0.2}
+            className="text-green-100 mb-8 max-w-2xl mx-auto"
+          >
+            Contact our export team to discuss your requirements, get pricing
+            information, and start your order process today.
+          </motion.p>
+          <motion.div
+            variants={staggerContainer}
+            {...motionProps}
+            custom={0.3}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <motion.div variants={fadeInLeft} custom={0.4}>
+              <Button
+                size="lg"
+                className="bg-agri-orange hover:bg-orange-600 text-white"
+              >
+                Start Export Inquiry
+              </Button>
+            </motion.div>
+            <motion.div variants={fadeInRight} custom={0.5}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-agri-green bg-transparent"
+              >
+                View Export Process
+              </Button>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
-
       <Footer />
     </div>
-  )
+  );
 }
