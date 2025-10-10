@@ -32,7 +32,7 @@ export default function Navbar() {
               alt="logo"
               className="h-12 "
             />
-            <span className="text-sm font-bold">
+            <span className="text-sm font-bold gravitas-one-regular">
               Sustaining quality <br /> Delivering trust
             </span>
           </Link>

@@ -12,7 +12,7 @@ export default function Footer() {
 								alt="logo"
 								className="h-12 "
 							/>
-              <span className="text-lg font-bold">GlobalBridge Export</span>
+              <span className="text-lg font-bold gravitas-one-regular">GlobalBridge Export</span>
             </div>
             <p className="text-gray-300 text-sm">
               Connecting global markets with Africa's finest agricultural products through sustainable and ethical trade
