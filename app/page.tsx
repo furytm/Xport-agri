@@ -341,7 +341,7 @@ export default function AgriExportLanding() {
           </div>
           <div className="flex items-center space-x-3">
             <Mail className="h-5 w-5 text-agri-orange" />
-            <span>info@globalbridge.com</span>
+            <span>info@globalbridgeexportltd.com</span>
           </div>
           <div className="flex items-center space-x-3">
             <MessageCircle className="h-5 w-5 text-agri-orange" />

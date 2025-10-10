@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, FileText, Truck, CreditCard } from "lucide-react"
+import Link from "next/link"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 
@@ -376,8 +377,9 @@ export default function ProcessPage() {
       {...motionProps}
     >
       <Button size="lg" className="bg-agri-orange hover:bg-orange-600 text-white">
-        Contact US
+        <Link href="/contact"> Contact US</Link>
       </Button>
+       
      
     </motion.div>
   </motion.div>

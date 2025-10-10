@@ -13,6 +13,7 @@ import { Badge } from "@/components/ui/badge"
 import { Award, Shield, CheckCircle, Users, Globe, Star } from "lucide-react"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import Link from "next/link";
 
 export default function CertificationsPage() {
   return (
@@ -533,14 +534,14 @@ export default function CertificationsPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-agri-orange hover:bg-orange-600 text-white">
-              View Our Products
+            <Link href="/products">View Our Products</Link>  
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-agri-green bg-transparent"
             >
-              Download Certificates
+              <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
         </div>

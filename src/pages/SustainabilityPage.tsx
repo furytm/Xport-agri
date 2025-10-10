@@ -7,6 +7,7 @@ import {
   staggerContainer,
   motionProps,
 } from "../animations/animations";
+import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -499,14 +500,14 @@ export default function SustainabilityPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-agri-orange hover:bg-orange-600 text-white">
-      Contact Us
+     <Link href="/contact">Contact Us</Link> 
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-agri-green bg-transparent"
             >
-                 Learn About Our Products
+                <Link href="/products">Learn About Our Products</Link> 
             </Button>
           </div>
         </div>

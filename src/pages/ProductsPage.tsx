@@ -14,6 +14,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Link from "next/link"
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Download, Package, Truck, Award } from "lucide-react";
@@ -327,7 +328,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Download Catalog */}
-      <section className="py-16 bg-white">
+      {/* <section className="py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
           <motion.h2
             variants={fadeInUp}
@@ -357,7 +358,7 @@ export default function ProductsPage() {
             </Button>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action */}
       <section className="py-16 bg-agri-green">
@@ -390,7 +391,7 @@ export default function ProductsPage() {
                 size="lg"
                 className="bg-agri-orange hover:bg-orange-600 text-white"
               >
-                Start Export Inquiry
+               <Link href="/contact">Start Export Inquiry</Link> 
               </Button>
             </motion.div>
             <motion.div variants={fadeInRight} custom={0.5}>
@@ -399,7 +400,7 @@ export default function ProductsPage() {
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-agri-green bg-transparent"
               >
-                View Export Process
+               <Link href="/process">View Export Process</Link> 
               </Button>
             </motion.div>
           </motion.div>

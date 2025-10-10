@@ -15,6 +15,7 @@ import { Badge } from "@/components/ui/badge"
 import { Phone, Mail, MapPin, MessageCircle, Clock, Globe } from "lucide-react"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import Link from "next/link";
 
 export default function ContactPage() {
   return (
@@ -113,7 +114,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-agri-green mb-2">Phone Number</label>
-                      <Input placeholder="+1 (555) 123-4567" className="border-gray-300" />
+                      <Input placeholder="+234 (0) 123-4567" className="border-gray-300" />
                     </div>
                   </div>
 
@@ -164,21 +165,21 @@ export default function ContactPage() {
                         <Phone className="h-5 w-5 text-agri-green" />
                         <div>
                           <p className="font-medium text-agri-green">Main Office</p>
-                          <p className="text-gray-600">+233 (0) 302 123 456</p>
+                          <p className="text-gray-600">+2349034397834</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
                         <Mail className="h-5 w-5 text-agri-green" />
                         <div>
                           <p className="font-medium text-agri-green">Email</p>
-                          <p className="text-gray-600">info@agriexports.com</p>
+                          <p className="text-gray-600">info@globalbridgeexportltd.com</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
                         <MessageCircle className="h-5 w-5 text-agri-green" />
                         <div>
                           <p className="font-medium text-agri-green">WhatsApp</p>
-                          <p className="text-gray-600">+233 (0) 244 567 890</p>
+                          <p className="text-gray-600">+2349034397834</p>
                         </div>
                       </div>
                     </CardContent>
@@ -272,7 +273,7 @@ export default function ContactPage() {
           title: "Export Sales",
           desc: "Product inquiries and orders",
           email: "sales@agriexports.com",
-          phone: "+233 (0) 302 123 457",
+          phone: "+234 1 234 5678",
           badge: "Primary Contact",
         },
         {
@@ -280,7 +281,7 @@ export default function ContactPage() {
           title: "Quality Assurance",
           desc: "Certifications and quality",
           email: "quality@agriexports.com",
-          phone: "+233 (0) 302 123 458",
+          phone: "+234 1 234 5678",
           badge: "Technical Support",
         },
         {
@@ -288,7 +289,7 @@ export default function ContactPage() {
           title: "Logistics",
           desc: "Shipping and documentation",
           email: "logistics@agriexports.com",
-          phone: "+233 (0) 302 123 459",
+          phone: "+234 1 234 5678",
           badge: "Shipping Support",
         },
       ].map((item, i) => (
@@ -404,28 +405,25 @@ export default function ContactPage() {
     >
       <Card>
         <CardContent className="p-0">
-          <div className="bg-gray-200 h-96 rounded-lg flex items-center justify-center">
-            <div className="text-center">
-              <MapPin className="h-16 w-16 text-agri-green mx-auto mb-4" />
-              <p className="text-lg font-semibold text-agri-green">
-                Interactive Map
-              </p>
-              <p className="text-gray-600">
-              25 Okezie Ugbaja Street,
-            Victory Estate Off Ago
-            <br />
-            Lagos, Nigeria
-              </p>
-              <Button className="mt-4 bg-agri-orange hover:bg-orange-600 text-white">
-                Get Directions
-              </Button>
-            </div>
+          <div className="rounded-lg overflow-hidden h-96">
+            <iframe
+              title="Office Location"
+              src=   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15857.091974020885!2d3.282836079597495!3d6.487073121954509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8ed5d1dbd95b%3A0xad31a1010fdf2271!2sVictory%20Estate%20Okota!5e0!3m2!1sen!2sng!4v1760132215643!5m2!1sen!2sng" 
+      
+              width="100%"
+              height="100%"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="border-0"
+            ></iframe>
           </div>
         </CardContent>
       </Card>
     </motion.div>
   </div>
 </section>
+
 
       {/* Call to Action */}
       <section className="py-16 bg-agri-green">
@@ -437,15 +435,9 @@ export default function ContactPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-agri-orange hover:bg-orange-600 text-white">
-              Send Inquiry Now
+          <Link href="/products"> View Products</Link> 
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-agri-green bg-transparent"
-            >
-              Call Us Today
-            </Button>
+          
           </div>
         </div>
       </section>

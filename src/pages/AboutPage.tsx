@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import {fadeInUp, fadeInLeft, fadeInRight,staggerContainer, motionProps  } from "../animations/animations";
-
+import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -316,8 +316,9 @@ export default function AboutPage() {
     <motion.div variants={staggerContainer} {...motionProps} className="flex flex-col sm:flex-row gap-4 justify-center">
       <motion.div variants={fadeInLeft} custom={0} {...motionProps}>
         <Button size="lg" className="bg-agri-orange hover:bg-orange-600 text-white">
-          Start Partnership
+          <Link href="/contact">  Start Partnership</Link>
         </Button>
+       
       </motion.div>
 
       <motion.div variants={fadeInRight} custom={1} {...motionProps}>
@@ -326,7 +327,8 @@ export default function AboutPage() {
           variant="outline"
           className="border-white text-white hover:bg-white hover:text-agri-green bg-transparent"
         >
-          View Our Products
+            <Link href="/products">   View Our Products</Link>
+       
         </Button>
       </motion.div>
     </motion.div>
