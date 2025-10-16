@@ -28,7 +28,7 @@ export default function ContactPage() {
           backgroundImage: "url('/cocoa.webp')",
         }}
       >
-        <div className="absolute inset-0 bg-agri-green/30 z-0"></div>
+ 
         <div className="container mx-auto px-4 text-center">
           <motion.h1
             variants={fadeInUp}
@@ -198,13 +198,11 @@ export default function ContactPage() {
                       <div className="space-y-2">
                         <p className="font-medium text-agri-green">Head Office</p>
                         <p className="text-gray-600">
-                          123 Export Drive
+                          No. 25 Okezie Ugbaja Street
                           <br />
-                          Tema Industrial Area
+                      Victory Estate Off Ago
                           <br />
-                          Tema, Ghana
-                          <br />
-                          West Africa
+                         Lagos state, Nigeria  
                         </p>
                       </div>
                       <div className="mt-4 p-4 bg-gray-50 rounded-lg">
@@ -224,28 +222,7 @@ export default function ContactPage() {
                   </Card>
                 </motion.div>
 
-                <motion.div variants={fadeInUp} custom={4}>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="text-2xl text-agri-green flex items-center gap-2">
-                        <Globe className="h-6 w-6" />
-                        Regional Offices
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-3">
-                      <div>
-                        <p className="font-medium text-agri-green">Côte d'Ivoire Office</p>
-                        <p className="text-sm text-gray-600">Abidjan, Côte d'Ivoire</p>
-                        <p className="text-sm text-gray-600">+225 27 20 123 456</p>
-                      </div>
-                      <div>
-                        <p className="font-medium text-agri-green">Nigeria Office</p>
-                        <p className="text-sm text-gray-600">Lagos, Nigeria</p>
-                        <p className="text-sm text-gray-600">+234 1 234 5678</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+              
               </div>
             </motion.div>
           </motion.div>
@@ -270,27 +247,27 @@ export default function ContactPage() {
       {[
         {
           icon: <Globe className="h-8 w-8 text-white" />,
-          title: "Export Sales",
-          desc: "Product inquiries and orders",
-          email: "sales@agriexports.com",
-          phone: "+234 1 234 5678",
-          badge: "Primary Contact",
+          title: "Our Location",
+          email: "No. 25 Okezie Ugbaja Street Victory Estate Off Ago, Lagos state, Nigeria",
+
+         
+          badge: "Head Office",
         },
         {
           icon: <Phone className="h-8 w-8 text-white" />,
-          title: "Quality Assurance",
-          desc: "Certifications and quality",
-          email: "quality@agriexports.com",
+          title: "Call Us",
+          desc: "Active 24/7",
+       
           phone: "+234 1 234 5678",
-          badge: "Technical Support",
+          badge: "Contact",
         },
         {
           icon: <Mail className="h-8 w-8 text-white" />,
-          title: "Logistics",
-          desc: "Shipping and documentation",
-          email: "logistics@agriexports.com",
-          phone: "+234 1 234 5678",
-          badge: "Shipping Support",
+          title: "Email Us",
+          desc: "Send an email",
+          email: "Info@globalexportltd.com",
+       
+          badge: "Email",
         },
       ].map((item, i) => (
         <motion.div key={i} variants={fadeInUp} custom={i * 0.2}>
@@ -299,12 +276,12 @@ export default function ContactPage() {
               <div className="w-16 h-16 bg-agri-green rounded-full mx-auto mb-4 flex items-center justify-center">
                 {item.icon}
               </div>
-              <CardTitle className="text-agri-green">{item.title}</CardTitle>
+              <CardTitle className="text xl gravitas-one-regular text-agri-green">{item.title}</CardTitle>
               <CardDescription>{item.desc}</CardDescription>
             </CardHeader>
             <CardContent className="text-center space-y-2">
-              <p className="text-sm text-gray-600">{item.email}</p>
-              <p className="text-sm text-gray-600">{item.phone}</p>
+              <p className="text-xl gravitas-one-regular text-gray-600">{item.email}</p>
+              <p className="text-xl gravitas-one-regulartext-gray-600">{item.phone}</p>
               <Badge
                 variant="outline"
                 className="border-agri-green text-agri-green"
@@ -319,73 +296,23 @@ export default function ContactPage() {
   </div>
 </section>
 
-{/* Alternative Contact Methods */}
-<section className="py-16 bg-white">
-  <div className="container mx-auto px-4">
-    <motion.h2
-      variants={fadeInUp}
-      {...motionProps}
-      className="text-3xl font-bold text-agri-green mb-12 text-center"
-    >
-      Alternative Ways to Reach Us
-    </motion.h2>
 
-    <motion.div
-      variants={staggerContainer}
-      {...motionProps}
-      className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
-    >
-      <motion.div variants={fadeInLeft}>
-        <Card className="border-agri-green border-2">
-          <CardHeader>
-            <CardTitle className="text-2xl text-agri-green flex items-center gap-2">
-              <MessageCircle className="h-6 w-6" />
-              WhatsApp Business
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-gray-700">
-              Get instant responses to your questions through our WhatsApp
-              Business account. Perfect for quick inquiries and real-time
-              communication.
-            </p>
-            <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
-              <MessageCircle className="h-4 w-4 mr-2" />
-              Chat on WhatsApp
+    {/* Call to Action */}
+      <section className="py-16 bg-agri-green">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-white mb-6">Ready to Start Exporting?</h2>
+          <p className="text-green-100 mb-8 max-w-2xl mx-auto">
+            Don't wait - reach out today to discuss your agricultural export needs. Our experienced team is ready to
+            help you succeed in the global marketplace.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-agri-orange hover:bg-orange-600 text-white">
+          <Link href="/products"> View Products</Link> 
             </Button>
-            <p className="text-sm text-gray-600 text-center">
-              Available: Monday - Friday, 8:00 AM - 6:00 PM (GMT)
-            </p>
-          </CardContent>
-        </Card>
-      </motion.div>
-
-      <motion.div variants={fadeInRight}>
-        <Card className="border-agri-green border-2">
-          <CardHeader>
-            <CardTitle className="text-2xl text-agri-green flex items-center gap-2">
-              <Globe className="h-6 w-6" />
-              Schedule a Call
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-gray-700">
-              Book a consultation call with our export specialists to discuss
-              your specific requirements and get personalized recommendations.
-            </p>
-            <Button className="w-full bg-agri-orange hover:bg-orange-600 text-white">
-              <Phone className="h-4 w-4 mr-2" />
-              Schedule Consultation
-            </Button>
-            <p className="text-sm text-gray-600 text-center">
-              30-minute consultation calls available
-            </p>
-          </CardContent>
-        </Card>
-      </motion.div>
-    </motion.div>
-  </div>
-</section>
+          
+          </div>
+        </div>
+      </section>
 
 {/* Map Section */}
 <section className="py-16">
@@ -425,22 +352,7 @@ export default function ContactPage() {
 </section>
 
 
-      {/* Call to Action */}
-      <section className="py-16 bg-agri-green">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Ready to Start Exporting?</h2>
-          <p className="text-green-100 mb-8 max-w-2xl mx-auto">
-            Don't wait - reach out today to discuss your agricultural export needs. Our experienced team is ready to
-            help you succeed in the global marketplace.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-agri-orange hover:bg-orange-600 text-white">
-          <Link href="/products"> View Products</Link> 
-            </Button>
-          
-          </div>
-        </div>
-      </section>
+  
 
       <Footer />
     </div>

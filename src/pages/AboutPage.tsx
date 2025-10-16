@@ -265,9 +265,9 @@ export default function AboutPage() {
       variants={fadeInUp}
       {...motionProps}
       custom={4}
-      className="mt-16 text-center"
+      className="mt-8 text-center"
     >
-      <h3 className="text-2xl font-bold text-agri-green mb-8">Certifications & Awards</h3>
+      {/* <h3 className="text-2xl font-bold text-agri-green mb-8">Certifications & Awards</h3>
 
       <motion.div
         variants={staggerContainer}
@@ -286,7 +286,7 @@ export default function AboutPage() {
             </Badge>
           </motion.div>
         ))}
-      </motion.div>
+      </motion.div> */}
     </motion.div>
   </div>
 </section>

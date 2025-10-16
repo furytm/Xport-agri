@@ -97,10 +97,10 @@ export default function ProductsPage() {
               <div
                 className="h-48 bg-cover bg-center relative"
                 style={{
-                  backgroundImage: "url('/premium-cocoa-pods-harvest.jpg')",
+                  backgroundImage: "url('/cocoaproducts.webp')",
                 }}
               >
-                <div className="absolute inset-0 bg-agri-green/30"></div>
+            
                 <div className="absolute bottom-4 left-4">
                   <Badge className="bg-agri-orange text-white">Premium Grade</Badge>
                 </div>
@@ -142,10 +142,10 @@ export default function ProductsPage() {
               <div
                 className="h-48 bg-cover bg-center relative"
                 style={{
-                  backgroundImage: "url('/raw-cashew-nuts-in-wooden-bowl.jpg')",
+                  backgroundImage: "url('/cashew.webp')",
                 }}
               >
-                <div className="absolute inset-0 bg-agri-green/30"></div>
+        
                 <div className="absolute bottom-4 left-4">
                   <Badge className="bg-agri-orange text-white">Export Quality</Badge>
                 </div>
@@ -187,10 +187,10 @@ export default function ProductsPage() {
               <div
                 className="h-48 bg-cover bg-center relative"
                 style={{
-                  backgroundImage: "url('/various-african-agricultural-products-spices-grain.jpg')",
+                  backgroundImage: "url('/spices.webp')",
                 }}
               >
-                <div className="absolute inset-0  bg-opacity30"></div>
+           
                 <div className="absolute bottom-4 left-4">
                   <Badge className="bg-agri-orange text-white">Diverse Range</Badge>
                 </div>
@@ -395,13 +395,15 @@ export default function ProductsPage() {
               </Button>
             </motion.div>
             <motion.div variants={fadeInRight} custom={0.5}>
-              <Button
+              <Link href="/process">
+               <Button
+                  
                 size="lg"
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-agri-green bg-transparent"
               >
-               <Link href="/process">View Export Process</Link> 
-              </Button>
+              View Export Process
+              </Button></Link> 
             </motion.div>
           </motion.div>
         </div>

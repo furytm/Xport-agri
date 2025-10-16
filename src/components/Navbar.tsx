@@ -13,7 +13,7 @@ export default function Navbar() {
     { name: "Products", href: "/products" },
     { name: "Process", href: "/process" },
     { name: "Sustainability", href: "/sustainability" },
-    { name: "Certifications", href: "/certifications" },
+    // { name: "Certifications", href: "/certifications" },
     { name: "Contact", href: "/contact" },
   ]
 
@@ -32,7 +32,7 @@ export default function Navbar() {
               alt="logo"
               className="h-12 "
             />
-            <span className="text-sm font-bold gravitas-one-regular">
+            <span className="text-xl font-bold gravitas-one-regular">
               Sustaining quality <br /> Delivering trust
             </span>
           </Link>
