@@ -113,7 +113,7 @@ export default function ProductsPage() {
                 <div>
                   <h4 className="font-semibold text-agri-green mb-2">Origin & Quality</h4>
                   <p className="text-sm text-gray-600">
-                    Sourced from Ghana's Ashanti and Western regions, known for producing the world's finest cocoa. Our
+                    Sourced with good quality, known for producing the world's finest cocoa. Our
                     beans are carefully fermented for 5-7 days and sun-dried to achieve optimal flavor profiles.
                   </p>
                 </div>
@@ -158,7 +158,7 @@ export default function ProductsPage() {
                 <div>
                   <h4 className="font-semibold text-agri-green mb-2">Origin & Quality</h4>
                   <p className="text-sm text-gray-600">
-                    Harvested from Côte d'Ivoire and Ghana, our cashew nuts are carefully selected for size, color, and
+                   Our cashew nuts are carefully selected for size, color, and
                     quality. Each batch is sorted and graded to ensure consistency.
                   </p>
                 </div>
