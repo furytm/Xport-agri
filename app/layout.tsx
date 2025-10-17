@@ -5,7 +5,11 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "AgriExport Global - Premium African Agricultural Exports",
   description: "Premium cocoa and cashew exports from Africa to global markets",
-    generator: 'v0.app'
+    generator: 'v0.app',
+      icons: {
+    icon: "/log.jpg", 
+  },
+
 }
 
 export default function RootLayout({
