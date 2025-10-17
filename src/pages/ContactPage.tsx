@@ -16,8 +16,91 @@ import { Phone, Mail, MapPin, MessageCircle, Clock, Globe } from "lucide-react"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import Link from "next/link";
+import { useState } from "react";
+import emailjs from "emailjs-com";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
-export default function ContactPage() {
+
+ 
+
+export default function ContactPage() { 
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    company: "",
+    phone: "",
+    product: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+
+
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+
+  // Show "sending" popup
+  Swal.fire({
+    title: "Sending Message...",
+    text: "Please wait while we send your inquiry.",
+    allowOutsideClick: false,
+    showConfirmButton: false,
+    didOpen: () => {
+      Swal.showLoading();
+    },
+  });
+
+  try {
+    await emailjs.send(
+      "service_ez8lqjl", // your EmailJS Service ID
+      "template_451uktx", // your EmailJS Template ID
+      formData,
+      "1PYnUCyqL05vSKxX1" // your EmailJS Public Key
+    );
+
+    // Close loading and show success
+    Swal.close();
+    Swal.fire({
+      title: "Message Sent!",
+      text: "✅ We’ve received your message and will get back to you soon.",
+      icon: "success",
+      confirmButtonColor: "#16a34a", // Tailwind green-600
+      confirmButtonText: "Okay",
+    });
+
+    setFormData({
+      fullName: "",
+      email: "",
+      company: "",
+      phone: "",
+      product: "",
+      message: "",
+    });
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+
+    // Close loading and show error
+    Swal.close();
+    Swal.fire({
+      title: "Failed to Send",
+      text: "❌ Something went wrong. Please try again later.",
+      icon: "error",
+      confirmButtonColor: "#dc2626", // Tailwind red-600
+      confirmButtonText: "Retry",
+    });
+  } finally {
+    setLoading(false);
+  }
+};
+
   return (
     <div className="min-h-screen bg-agri-cream">
       <Navbar />
@@ -88,66 +171,106 @@ export default function ContactPage() {
             {...motionProps}
             className="grid lg:grid-cols-2 gap-12"
           >
-            {/* Contact Form */}
-            <motion.div variants={fadeInLeft} custom={0}>
-              <Card className="border-agri-green border-2">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-agri-green">Send Us an Inquiry</CardTitle>
-                  <CardDescription>Fill out the form below and we'll get back to you within 24 hours</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-agri-green mb-2">Full Name *</label>
-                      <Input placeholder="Your full name" className="border-gray-300" />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-agri-green mb-2">Email Address *</label>
-                      <Input type="email" placeholder="your@email.com" className="border-gray-300" />
-                    </div>
-                  </div>
+           <motion.div variants={fadeInLeft} custom={0}>
+      <Card className="border-agri-green border-2">
+        <CardHeader>
+          <CardTitle className="text-2xl text-agri-green">Send Us an Inquiry</CardTitle>
+          <CardDescription>Fill out the form below and we'll get back to you within 24 hours</CardDescription>
+        </CardHeader>
 
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-agri-green mb-2">Company Name</label>
-                      <Input placeholder="Your company" className="border-gray-300" />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-agri-green mb-2">Phone Number</label>
-                      <Input placeholder="+234 (0) 123-4567" className="border-gray-300" />
-                    </div>
-                  </div>
+        <CardContent>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-agri-green mb-2">Full Name *</label>
+                <Input
+                  name="fullName"
+                  placeholder="Your full name"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-agri-green mb-2">Email Address *</label>
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder="your@email.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-agri-green mb-2">Product Interest *</label>
-                    <select className="w-full p-3 border border-gray-300 rounded-md">
-                      <option value="">Select a product</option>
-                      <option value="cocoa">Premium Cocoa Beans</option>
-                      <option value="cashew">Raw Cashew Nuts</option>
-                      <option value="shea">Shea Butter & Nuts</option>
-                      <option value="palm">Palm Oil & Kernel</option>
-                      <option value="spices">Spices & Herbs</option>
-                      <option value="multiple">Multiple Products</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-agri-green mb-2">Company Name</label>
+                <Input
+                  name="company"
+                  placeholder="Your company"
+                  value={formData.company}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-agri-green mb-2">Phone Number</label>
+                <Input
+                  name="phone"
+                  placeholder="+234 (0) 123-4567"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-agri-green mb-2">Message *</label>
-                    <Textarea
-                      placeholder="Please describe your requirements, including quantity, destination, and any specific quality requirements..."
-                      className="border-gray-300 min-h-[120px]"
-                    />
-                  </div>
+            <div>
+              <label className="block text-sm font-medium text-agri-green mb-2">Product Interest *</label>
+              <select
+                name="product"
+                value={formData.product}
+                onChange={handleChange}
+                required
+                className="w-full p-3 border border-gray-300 rounded-md"
+              >
+                <option value="">Select a product</option>
+                <option value="cocoa">Premium Cocoa Beans</option>
+                <option value="cashew">Raw Cashew Nuts</option>
+                <option value="shea">Shea Butter & Nuts</option>
+                <option value="palm">Palm Oil & Kernel</option>
+                <option value="spices">Spices & Herbs</option>
+                <option value="multiple">Multiple Products</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
 
-                  <Button className="w-full bg-agri-orange hover:bg-orange-600 text-white">Send Inquiry</Button>
+            <div>
+              <label className="block text-sm font-medium text-agri-green mb-2">Message *</label>
+              <Textarea
+                name="message"
+                placeholder="Please describe your requirements..."
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-                  <p className="text-sm text-gray-600 text-center">
-                    * Required fields. We respect your privacy and will never share your information.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
+            <Button
+              type="submit"
+              className="w-full bg-agri-orange hover:bg-orange-600 text-white"
+              disabled={loading}
+            >
+              {loading ? "Sending..." : "Send Inquiry"}
+            </Button>
+
+            <p className="text-sm text-gray-600 text-center">
+              * Required fields. We respect your privacy and will never share your information.
+            </p>
+          </form>
+        </CardContent>
+      </Card>
+    </motion.div>
 
             {/* Contact Information */}
             <motion.div variants={fadeInRight} custom={1}>

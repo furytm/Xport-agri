@@ -9,6 +9,7 @@ import { Users, Award, Globe, Heart, Target, Handshake } from "lucide-react"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-agri-cream">
@@ -63,11 +64,11 @@ export default function AboutPage() {
         custom={1}
         className="text-lg text-gray-700 leading-relaxed"
       >
-        Our mission is to showcase the richness of Africa’s farmlands by delivering fresh, natural, and
-        premium-grade products that meet global standards. With a strong commitment to quality,
-        reliability, and sustainability, we ensure that our clients receive only the best Africa has to
-        offer. At GlobalBridge Export Ltd, we are not just building trade links — we are bridging
-        cultures and fostering lasting partnerships across the globe.
+     GlobalBridge Export Ltd is a proudly African company dedicated to connecting the world with the finest agro products from the continent. We specialize in sourcing, packaging, and exporting high-quality African agricultural products to international markets.
+
+Our mission is to showcase the richness of Africa’s farmlands by delivering fresh, natural, and premium-grade products that meet global standards. With a strong commitment to quality, reliability, and sustainability, we ensure that our clients receive only the best Africa has to offer.
+
+At GlobalBridge Export Ltd, we are not just building trade links — we are bridging cultures and fostering lasting partnerships across the globe.
       </motion.p>
     </motion.div>
   </div>
@@ -81,28 +82,25 @@ export default function AboutPage() {
         <h2 className="text-3xl font-bold text-agri-green mb-6">Our Origin Story</h2>
         <div className="space-y-4 text-gray-700">
           <p>
-            Founded in 2010 by a team of agricultural experts and international trade specialists,
-            AgriExport Global began as a small operation with a big vision: to create sustainable
-            value chains that benefit both African farmers and global consumers.
+          Founded in 2023 by a team of agricultural experts and international trade specialists, GlobalBridge Exports Ltd began as a small operation with a big vision: to create sustainable value chains that benefit both African farmers and global consumers.
+
           </p>
           <p>
-            Starting with just a handful of cocoa farmers in Ghana, we have grown to work with over
-            1,200 farmers across West Africa, maintaining our commitment to fair trade, quality
-            excellence, and environmental sustainability.
+          
+Starting with just a handful of farmers in Nigeria,, we have grown to work with over 500 farmers across West Africa, maintaining our commitment to fair trade, quality excellence, and environmental sustainability.
+
           </p>
           <p>
-            Today, we are proud to be one of Africa's most trusted agricultural export partners,
-            serving clients across Europe, Asia, and the Americas while continuing to support the
-            communities that make our success possible.
+        Today, we are proud to be one of Africa's most trusted agricultural export partners, serving clients across Europe, Asia, and the Americas while continuing to support the communities that make our success possible.
           </p>
         </div>
       </motion.div>
 
       <motion.div variants={fadeInRight} {...motionProps} custom={1}>
         <img
-          src="/company-founders-agricultural-field-ghana-sunrise.jpg"
+          src="/cocoa3.webp"
           alt="Company founders in agricultural field"
-          className="rounded-lg shadow-lg w-full h-auto"
+      className="rounded-lg shadow-lg w-full h-auto max-h-80 object-cover"
         />
       </motion.div>
     </div>

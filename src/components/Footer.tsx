@@ -88,7 +88,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary" />
-                <span className="text-gray-300 hover:text-white"> info@globalexportltd.com
+                <span className="text-gray-300 hover:text-white"> info@globalbridgeexportltd.com
 </span>
               </div>
             </div>
