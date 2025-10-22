@@ -301,7 +301,7 @@ export default function AgriExportLanding() {
         {...motionProps}
         className="text-3xl md:text-4xl font-bold mb-4"
       >
-        Ready to Import? Let&apos;s Talk.
+        Ready to Import? Let's Talk.
       </motion.h2>
 
       <motion.p
