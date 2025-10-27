@@ -185,24 +185,24 @@ Starting with just a handful of farmers in Nigeria,, we have grown to work with 
       {[
         {
           icon: <Users className="h-10 w-10 text-white" />,
-          name: "Kwame Asante",
-          role: "CEO & Founder",
+          name: "Ali Israel",
+          role: "Lab Technician",
           desc:
-            "20+ years in agricultural trade and sustainable farming practices.  Empowering African farmers.",
+            "Ali Israel is a qualified laboratory scientist with a degree in Laboratory Science from the Federal University of Lafia. He has strong skills in diagnostic testing, microbiology, and laboratory safety, with a solid commitment to accuracy, research, and quality healthcare delivery.",
         },
         {
           icon: <Award className="h-10 w-10 text-white" />,
-          name: "Sarah Osei",
-          role: "Head of Quality Assurance",
+          name: "SMary Ali ",
+          role: "Entrepreneur",
           desc:
-            "Expert in international food safety standards and agricultural quality control with 15 years experience.",
+            "Ali Mary is an entrepreneur and educator with a degree in Early Childhood Education from the College of Education. She runs a thriving business in agro and farm products, combining her passion for education and entrepreneurship to promote sustainable farming and quality agricultural produce.",
         },
         {
           icon: <Handshake className="h-10 w-10 text-white" />,
-          name: "Michael Adjei",
-          role: "Director of Operations",
+          name: "Gideon Idankpo ",
+          role: "Entrepreneur",
           desc:
-            "Logistics and supply chain specialist ensuring efficient and reliable export operations worldwide.",
+            "Gideon Idankpo is an ambitious entrepreneur with an academic background in Cybersecurity. He has transitioned into business and agro-entrepreneurship, building a career focused on innovation, sustainability, and growth in the agricultural sector. His blend of technical and business skills positions him to drive modern solutions in agribusiness and enterprise development.",
         },
       ].map((member, i) => (
         <motion.div

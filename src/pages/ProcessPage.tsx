@@ -128,7 +128,7 @@ export default function ProcessPage() {
             </div>
           </div>
         </div>
-        <Card className="lg:w-1/2 border-agri-green border-2">
+        {/* <Card className="lg:w-1/2 border-agri-green border-2">
           <CardHeader>
             <CardTitle className="text-agri-green flex items-center gap-2">
               <CheckCircle className="h-6 w-6" />
@@ -151,7 +151,7 @@ export default function ProcessPage() {
               </Badge>
             </div>
           </CardContent>
-        </Card>
+        </Card> */}
       </motion.div>
 
       {/* Step 2 */}
