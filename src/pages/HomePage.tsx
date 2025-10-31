@@ -4,7 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { fadeInUp, fadeInLeft, fadeInRight,staggerContainer, motionProps  } from "../animations/animations";
-
+import React, { useState } from "react";
+import Swal from "sweetalert2";
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -14,6 +15,73 @@ import Footer from "@/src/components/Footer"
 
 
 export default function AgriExportLanding() {
+   const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    product: "",
+    message: "",
+  });
+    const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    // SweetAlert2 loading state
+    Swal.fire({
+      title: "Sending Message...",
+      text: "Please wait while we send your inquiry.",
+      allowOutsideClick: false,
+      showConfirmButton: false,
+      didOpen: () => Swal.showLoading(),
+    });
+
+    try {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+      formData.append("access_key", "b613540a-22ab-41a6-98a3-d1db150ad147"); 
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      Swal.close();
+      if (result.success) {
+        Swal.fire({
+          title: "Message Sent!",
+          text: "✅ We’ve received your message and will get back to you soon.",
+          icon: "success",
+          confirmButtonColor: "#16a34a",
+          confirmButtonText: "Okay",
+        });
+        form.reset();
+      } else {
+        Swal.fire({
+          title: "Failed to Send",
+          text: result.message || "❌ Something went wrong. Please try again later.",
+          icon: "error",
+          confirmButtonColor: "#dc2626",
+          confirmButtonText: "Retry",
+        });
+      }
+    } catch (error) {
+      console.error("Web3Forms Error:", error);
+      Swal.close();
+      Swal.fire({
+        title: "Failed to Send",
+        text: "❌ Something went wrong. Please try again later.",
+        icon: "error",
+        confirmButtonColor: "#dc2626",
+        confirmButtonText: "Retry",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white"
     >
@@ -316,20 +384,49 @@ export default function AgriExportLanding() {
 
     <div className="grid lg:grid-cols-2 gap-12">
       {/* Contact Form */}
-      <motion.div variants={fadeInLeft} custom={2} {...motionProps}>
-        <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
-        <form className="space-y-4">
-          <div className="grid md:grid-cols-2 gap-4">
-            <Input placeholder="Your Name" className="bg-white text-gray-900" />
-            <Input type="email" placeholder="Email Address" className="bg-white text-gray-900" />
-          </div>
-          <Input placeholder="Product Interest (Cocoa, Cashew, etc.)" className="bg-white text-gray-900" />
-          <Textarea placeholder="Your Message" rows={4} className="bg-white text-gray-900" />
-          <Button className="w-full bg-agri-orange hover:bg-orange-600 text-white">
-            Send Inquiry
-          </Button>
-        </form>
-      </motion.div>
+   <motion.div variants={fadeInLeft} custom={2}>
+      <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
+
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid md:grid-cols-2 gap-4">
+          <Input
+            name="name"
+            placeholder="Your Name"
+            className="bg-white text-gray-900"
+            required
+          />
+          <Input
+            name="email"
+            type="email"
+            placeholder="Email Address"
+            className="bg-white text-gray-900"
+            required
+          />
+        </div>
+
+        <Input
+          name="product"
+          placeholder="Product Interest (Cocoa, Cashew, etc.)"
+          className="bg-white text-gray-900"
+        />
+        <Textarea
+          name="message"
+          placeholder="Your Message"
+          rows={4}
+          className="bg-white text-gray-900"
+          required
+        />
+
+        <Button
+          type="submit"
+          disabled={loading}
+          className="w-full bg-agri-orange hover:bg-orange-600 text-white"
+        >
+          {loading ? "Sending..." : "Send Inquiry"}
+        </Button>
+      </form>
+    </motion.div>
+
 
       {/* Contact Info */}
       <motion.div variants={fadeInRight} custom={3} {...motionProps}>
