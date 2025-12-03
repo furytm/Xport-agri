@@ -57,7 +57,7 @@ export default function AboutPage() {
                 <motion.div variants={fadeInLeft} custom={0} {...motionProps} className="flex justify-center">
                   <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }} className="relative">
                     <img
-                      src="/ceo.jpg"
+                      src="/ceoo.jpg"
                       alt="Gideon Idankpo"
                       className="rounded-lg shadow-lg w-full max-w-sm h-auto object-cover"
                     />
