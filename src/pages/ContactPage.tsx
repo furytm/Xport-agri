@@ -18,7 +18,7 @@ import Footer from "../components/Footer"
 import Link from "next/link";
 import { useState } from "react";
 import emailjs from "emailjs-com";
-import toast from "react-hot-toast";
+
 import Swal from "sweetalert2";
 
 

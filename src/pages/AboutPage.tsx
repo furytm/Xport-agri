@@ -43,6 +43,90 @@ export default function AboutPage() {
     </motion.p>
   </div>
 </section>
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div variants={staggerContainer} {...motionProps} className="max-w-4xl mx-auto">
+            <motion.div
+              variants={fadeInUp}
+              custom={0}
+              {...motionProps}
+              className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100"
+            >
+              <div className="grid md:grid-cols-2 gap-8 items-center p-8 md:p-12">
+                {/* Image with animation */}
+                <motion.div variants={fadeInLeft} custom={0} {...motionProps} className="flex justify-center">
+                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }} className="relative">
+                    <img
+                      src="/ceo.jpg"
+                      alt="Gideon Idankpo"
+                      className="rounded-lg shadow-lg w-full max-w-sm h-auto object-cover"
+                    />
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: 0.3, duration: 0.6 }}
+                      className="absolute inset-0 rounded-lg bg-gradient-to-t from-agri-green/20 to-transparent opacity-0 hover:opacity-100 transition-opacity"
+                    />
+                  </motion.div>
+                </motion.div>
+
+                {/* Text content with animation */}
+                <motion.div variants={fadeInRight} custom={1} {...motionProps} className="space-y-6">
+                  <div>
+                    <motion.h3
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="text-3xl font-bold text-agri-green mb-2"
+                    >
+                      Gideon Idankpo
+                    </motion.h3>
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: 0.1, duration: 0.5 }}
+                      className="text-agri-green font-semibold text-lg mb-2"
+                    >
+                      Entrepreneur
+                    </motion.p>
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: 0.2, duration: 0.5 }}
+                      className="text-agri-green font-bold text-base flex items-center gap-2"
+                    >
+                      <span>📞</span>
+                      +234 903 439 7834
+                    </motion.p>
+                  </div>
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.6 }}
+                    className="text-gray-700 leading-relaxed text-base"
+                  >
+                    Gideon Idankpo is an ambitious entrepreneur with an academic background in Cybersecurity. He has
+                    transitioned into business and agro-entrepreneurship, building a career focused on innovation,
+                    sustainability, and growth in the agricultural sector. His blend of technical and business skills
+                    positions him to drive modern solutions in agribusiness and enterprise development.
+                  </motion.p>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.4, duration: 0.6 }}
+                  >
+                    <Button className="bg-agri-green hover:bg-agri-green/90 text-white">
+                      <Link href="https://wa.me/2349034397834" target="_blank">
+                        Contact Gideon
+                      </Link>
+                    </Button>
+                  </motion.div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
 
 {/* Company Overview */}
 <section className="py-16">
