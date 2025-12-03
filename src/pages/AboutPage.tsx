@@ -266,7 +266,14 @@ Starting with just a handful of farmers in Nigeria,, we have grown to work with 
       {...motionProps}
       className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto"
     >
-      {[
+      {[ {
+          icon: <Handshake className="h-10 w-10 text-white" />,
+          name: "Gideon Idankpo ",
+          number:"+234 903 439 7834",
+          role: "Entrepreneur",
+          desc:
+            "Gideon Idankpo is an ambitious entrepreneur with an academic background in Cybersecurity. He has transitioned into business and agro-entrepreneurship, building a career focused on innovation, sustainability, and growth in the agricultural sector. His blend of technical and business skills positions him to drive modern solutions in agribusiness and enterprise development.",
+        },
         {
           icon: <Users className="h-10 w-10 text-white" />,
           name: "Ali Israel",
@@ -284,14 +291,7 @@ Starting with just a handful of farmers in Nigeria,, we have grown to work with 
           desc:
             "Ali Mary is an entrepreneur and educator with a degree in Early Childhood Education from the College of Education. She runs a thriving business in agro and farm products, combining her passion for education and entrepreneurship to promote sustainable farming and quality agricultural produce.",
         },
-        {
-          icon: <Handshake className="h-10 w-10 text-white" />,
-          name: "Gideon Idankpo ",
-          number:"+234 903 439 7834",
-          role: "Entrepreneur",
-          desc:
-            "Gideon Idankpo is an ambitious entrepreneur with an academic background in Cybersecurity. He has transitioned into business and agro-entrepreneurship, building a career focused on innovation, sustainability, and growth in the agricultural sector. His blend of technical and business skills positions him to drive modern solutions in agribusiness and enterprise development.",
-        },
+       
       ].map((member, i) => (
         <motion.div
           key={member.name}
